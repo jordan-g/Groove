@@ -25,6 +25,20 @@ extension NSImage {
     }
 }
 
+extension FileManager {
+    func clearTemporaryDirectory() {
+        do {
+            let tmpDirectory = try contentsOfDirectory(atPath: NSTemporaryDirectory())
+            try tmpDirectory.forEach {[unowned self] file in
+                let path = String.init(format: "%@%@", NSTemporaryDirectory(), file)
+                try self.removeItem(atPath: path)
+            }
+        } catch {
+            print(error)
+        }
+    }
+}
+
 public class WallpaperController {
     var initialWallpaperURL: URL?
     
@@ -38,6 +52,10 @@ public class WallpaperController {
         NotificationCenter.default.addObserver(forName: .willTerminate, object: nil, queue: .main) { notification in
             self.setInitialWallpaper()
         }
+        
+        // Clear temporary directory
+        let fileManager = FileManager()
+        fileManager.clearTemporaryDirectory()
         
         // Get current wallpaper URL and store it
         self.getInitialWallpaperURL()
@@ -86,14 +104,15 @@ public class WallpaperController {
     func setWallpaper(artwork: NSImage) {
         if let blurredArtwork = self.blurImage(image: artwork) {
             // Save to temporary URL
-            let uuid = UUID().uuidString
-            let url: URL = URL(fileURLWithPath: "\(uuid).png")
-            
-            let success = blurredArtwork.pngWrite(to: url, options: Data.WritingOptions.atomic)
-            
-            if success {
-                // Set wallpaper
-                self.setWallpaper(url: url)
+            let directory = NSTemporaryDirectory()
+            let uuid = NSUUID().uuidString
+            if let url = NSURL.fileURL(withPathComponents: [directory, "\(uuid).png"]) {
+                let success = blurredArtwork.pngWrite(to: url, options: Data.WritingOptions.atomic)
+                
+                if success {
+                    // Set wallpaper
+                    self.setWallpaper(url: url)
+                }
             }
         }
     }
