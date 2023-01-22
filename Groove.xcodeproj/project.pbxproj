@@ -14,6 +14,9 @@
 		1763B749297C9BE000685EEF /* GrooveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763B748297C9BE000685EEF /* GrooveTests.swift */; };
 		1763B753297C9BE000685EEF /* GrooveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763B752297C9BE000685EEF /* GrooveUITests.swift */; };
 		1763B755297C9BE000685EEF /* GrooveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763B754297C9BE000685EEF /* GrooveUITestsLaunchTests.swift */; };
+		1763B765297D904B00685EEF /* WallpaperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763B764297D904B00685EEF /* WallpaperController.swift */; };
+		1763B767297D980800685EEF /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763B766297D980800685EEF /* EventsController.swift */; };
+		1763B769297DA1BF00685EEF /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1763B768297DA1BF00685EEF /* Music.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,10 @@
 		1763B74E297C9BE000685EEF /* GrooveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrooveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1763B752297C9BE000685EEF /* GrooveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrooveUITests.swift; sourceTree = "<group>"; };
 		1763B754297C9BE000685EEF /* GrooveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrooveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1763B763297CAAC500685EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1763B764297D904B00685EEF /* WallpaperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperController.swift; sourceTree = "<group>"; };
+		1763B766297D980800685EEF /* EventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
+		1763B768297DA1BF00685EEF /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +102,12 @@
 		1763B735297C9BDF00685EEF /* Groove */ = {
 			isa = PBXGroup;
 			children = (
+				1763B763297CAAC500685EEF /* Info.plist */,
 				1763B736297C9BDF00685EEF /* GrooveApp.swift */,
+				1763B764297D904B00685EEF /* WallpaperController.swift */,
+				1763B766297D980800685EEF /* EventsController.swift */,
 				1763B738297C9BDF00685EEF /* ContentView.swift */,
+				1763B768297DA1BF00685EEF /* Music.swift */,
 				1763B73A297C9BE000685EEF /* Assets.xcassets */,
 				1763B73F297C9BE000685EEF /* Groove.entitlements */,
 				1763B73C297C9BE000685EEF /* Preview Content */,
@@ -259,8 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1763B765297D904B00685EEF /* WallpaperController.swift in Sources */,
 				1763B739297C9BDF00685EEF /* ContentView.swift in Sources */,
+				1763B769297DA1BF00685EEF /* Music.swift in Sources */,
 				1763B737297C9BDF00685EEF /* GrooveApp.swift in Sources */,
+				1763B767297D980800685EEF /* EventsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +438,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Groove/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = yes;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,6 +468,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Groove/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = yes;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
