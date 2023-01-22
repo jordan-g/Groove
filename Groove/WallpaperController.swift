@@ -41,6 +41,9 @@ public class WallpaperController {
         
         // Get current wallpaper URL and store it
         self.getInitialWallpaperURL()
+        
+        // Do an initial update
+        self.updateWallpaper()
     }
     
     func getInitialWallpaperURL() {
